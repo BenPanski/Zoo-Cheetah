@@ -1179,6 +1179,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6781975950670621864, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
   m_PrefabInstance: {fileID: 509844575}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &584311421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
+  m_PrefabInstance: {fileID: 509844575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &591549176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
+  m_PrefabInstance: {fileID: 1864281591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610535383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1435,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653424778}
   m_CullTransparentMesh: 1
+--- !u!1 &672878344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
+  m_PrefabInstance: {fileID: 121396622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694990592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2204,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1008130999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
+  m_PrefabInstance: {fileID: 1279922854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1032851798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2321,12 @@ MonoBehaviour:
   ScreenEnvironmentsStartingPoints:
   - {fileID: 2019878812}
   - {fileID: 1570980013}
+  - {fileID: 1227267157}
+  - {fileID: 1921387974}
+  - {fileID: 672878344}
+  - {fileID: 591549176}
+  - {fileID: 1008130999}
+  - {fileID: 584311421}
   MyAnimator: {fileID: 1032851804}
   DefualtPos: {fileID: 694990592}
 --- !u!95 &1032851804
@@ -2456,6 +2482,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046745298}
   m_CullTransparentMesh: 1
+--- !u!1 &1227267157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
+  m_PrefabInstance: {fileID: 424783045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238792554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,6 +3276,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1921387974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}
+  m_PrefabInstance: {fileID: 442933976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2019878812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6781975949653059767, guid: 8cca58456edb79f47a4f2f75a3c031db, type: 3}

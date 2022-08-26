@@ -13,36 +13,46 @@ public class CheetaSpawn : MonoBehaviour
     private int ScreenRnd = 1;
     private bool spawned = false;
 
+    int counterRnd;
+    
     private void Start()
     {
-       int counterRnd = Random.Range(3, 13);
-       int ScreenRnd = Random.Range(0, ScreenEnvironmentsStartingPoints.Count);
-        
+        NewCheetha();
     }
+    public void NewCheetha() // sets the counterRnd and ScreenRnd to new random values
+    {
+        counterRnd = Random.Range(3, 13);
+        ScreenRnd = Random.Range(0, ScreenEnvironmentsStartingPoints.Count);
+
+    }
+
     void Update()
     {
         counter += Time.deltaTime;
 
-        if (counter > 15 + rnd)
+        if (counter > 15 + counterRnd) // if the counter is bigger then 15 +  
+        {
+            print("Cheetha wasnt found and is spawned again");
             spawned = false;
-
-        this.transform.position = DefualtPos.transform.position;
-        
+            this.transform.position = DefualtPos.transform.position;
+            NewCheetha();
+        }
+          
         if (spawned) 
         {
             return;
         }
 
-        
-
         if ( counter > rnd)
         {
-            //spawn cheetha
+            this.transform.SetParent(null); 
             this.transform.position = ScreenEnvironmentsStartingPoints[ScreenRnd].transform.position;
+            this.transform.parent = ScreenEnvironmentsStartingPoints[ScreenRnd].transform;
+            print("screen: "+ ScreenRnd);
             spawned = true;
 
             string trigger = "Screen" + (ScreenRnd + 1);
-            print(trigger);
+            print("trigger is "+trigger);
             MyAnimator.SetTrigger(trigger);
         }
        
