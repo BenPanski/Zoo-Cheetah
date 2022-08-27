@@ -5,75 +5,75 @@ using UnityEngine;
 public class CheetaSpawn : MonoBehaviour
 {
     [SerializeField] public List<GameObject> ScreenEnvironmentsStartingPoints;
-    [SerializeField] public Animator MyAnimator;
-    [SerializeField] public GameObject DefualtPos;
+    [SerializeField] public Transform DefualtPos;
 
-    private float counter;
-    private int ScreenRnd = 1;
-    private bool spawned = false;
-    private bool ChIsMoving = false;
+    Animator myAnimator;
+    private bool chIsMoving = false, spawned = false;
+    private int randomScreen = 1, randomCounter = 0;
+    private float counter = 0;
 
-    int counterRnd;
-    
+    private void Awake()
+    {
+        myAnimator = GetComponent<Animator>();
+    }
+
     private void Start()
     {
         NewCheetha();
     }
 
-    public void ImMoving()
-    {
-        ChIsMoving = true;
-        print("visable");
-
-    }
-    public void ImHidden()
-    {
-        ChIsMoving = false;
-        print("hidden");
-    }
-    public void NewCheetha() // sets the counterRnd and ScreenRnd to new random values
-    {
-        counterRnd = Random.Range(3, 8);
-        ScreenRnd = Random.Range(0, ScreenEnvironmentsStartingPoints.Count);
-
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && ChIsMoving)
+        counter += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space) && chIsMoving)
         {
             print("got you");
         }
 
-        counter += Time.deltaTime;
-
-        if (counter > 5 + counterRnd)  
+        if (counter > 5 + randomCounter && spawned)
         {
-           // print("Cheetha wasnt found and is spawned again");
+            // print("Cheetha wasnt found and is spawned again");
             spawned = false;
-            this.transform.position = DefualtPos.transform.position;
+            transform.SetParent(DefualtPos, false);
+            transform.position = Vector3.zero;
             NewCheetha();
             counter = 0;
         }
-          
-        if (spawned) 
-        {
-            return;
-        }
 
-        if ( counter > counterRnd)
+        if (counter > randomCounter && !spawned)
         {
-           // print("spawn cheetha");
-            this.transform.SetParent(null);
-            this.transform.position = Vector3.zero;
-            this.transform.parent = ScreenEnvironmentsStartingPoints[ScreenRnd].transform;
-            //print("screen: "+ ScreenRnd);
+            // print("spawn cheetha");
+            transform.SetParent(ScreenEnvironmentsStartingPoints[randomScreen].transform, false);
+            transform.rotation = Quaternion.identity;
+            transform.localScale = Vector3.one;
+            transform.position = Vector3.zero;
+
             spawned = true;
 
-            string trigger = "Screen" + (ScreenRnd+1);
-           // print("trigger is "+trigger);
-            MyAnimator.SetTrigger(trigger);
+            string triggerName = "Screen" + (randomScreen + 1 /* +1 for animation naming comvention*/);
+            myAnimator.SetTrigger(triggerName);
         }
-       
+
     }
+
+    public void ImMoving()
+    {
+        chIsMoving = true;
+        print("visable");
+
+    }
+
+    public void ImHidden()
+    {
+        chIsMoving = false;
+        print("hidden");
+    }
+
+    void NewCheetha() //Sets the randomCounter and randomScreen to new random values
+    {
+        randomCounter = Random.Range(3, 8);
+        randomScreen = Random.Range(0, ScreenEnvironmentsStartingPoints.Count);
+    }
+
 }

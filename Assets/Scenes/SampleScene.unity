@@ -2327,8 +2327,7 @@ MonoBehaviour:
   - {fileID: 591549176}
   - {fileID: 1008130999}
   - {fileID: 584311421}
-  MyAnimator: {fileID: 1032851804}
-  DefualtPos: {fileID: 694990592}
+  DefualtPos: {fileID: 694990593}
 --- !u!95 &1032851804
 Animator:
   serializedVersion: 3
